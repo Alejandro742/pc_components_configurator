@@ -60,6 +60,7 @@ button:focus {
 .btn-primary:hover{
     background-color: var(--primaraColorHover);
     transition: .4s ease-in-out;
+    cursor: pointer;
 }
 
 
@@ -111,6 +112,25 @@ button:focus {
     width: 100%;
     min-height: 5rem;
     border: none;
+}
+
+.sidebar ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+.sidebar ul li{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sidebar li i:hover{
+    cursor: pointer;
+}
+.sidebar li a{
+    color: white;
 }
 
 

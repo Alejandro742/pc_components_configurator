@@ -11,4 +11,10 @@
         </div>
         <button type="submit" class="btn btn-primary btn-block">Agregar PC</button>
     </form>
+    <ul>
+        <li>
+           <a href="index.php?pc_id:1">PC MASTER 01</a> 
+           <i class="far fa-trash-alt"></i>
+        </li>
+    </ul>
 </div>
