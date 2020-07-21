@@ -11,10 +11,27 @@
         </div>
         <input type="submit" class="btn btn-primary btn-block" value="Agregar PC">
     </form>
-    <ul id ="computers-list">
-        <li>
-           <a href="index.php?pc_id:1">PC MASTER 01</a> 
-           <i id = "999" class="far fa-trash-alt"></i>
-        </li>
+    <ul id="computers-list">
+        <?php
+        $computers = getComputers();
+        if (!$computers) {
+        ?>
+            <li>
+                <p>No hay Computadoras!</p>
+                <i class='fas fa-tired'></i>;
+            </li>
+        <?php
+        } else {
+            foreach($computers as $computer){
+        ?>
+                <li id=<?php echo $computer["pc_id"] ?> >
+                        <a href='index.php?pc_id:<?php echo $computer["pc_id"];?>'><?php echo $computer["pc_name"] ?></a> 
+                        <i class='far fa-trash-alt'></i>
+                     </li>
+            <?php
+            }
+        }
+        ?>
+        
     </ul>
 </div>
