@@ -119,6 +119,13 @@ button:focus {
     border: none;
 }
 
+.sidebar ul li{
+    margin-bottom:1rem;
+}
+.sidebar ul li:last-of-type{
+    margin-bottom:0;
+}
+
 .sidebar ul{
     list-style: none;
     padding: 0;
