@@ -81,13 +81,18 @@ button:focus {
     text-decoration: underline;
 }
 
+.index-container{
+    display: flex;
+    height: calc( 100% - 60px);
+}
+
 
 /* SIDEBAR */
 
 .sidebar{
     min-height: 100vh;
     background-color: #455A64;
-    max-width: 250px;
+    min-width: 250px;
     padding: 1rem;
 }
 .sidebar h2{
@@ -133,4 +138,26 @@ button:focus {
     color: white;
 }
 
+/* SIDEBAR COMPONENTS */
+.sidebar h3 {
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    margin-top: 3rem;
+}
+.sidebar h3 a{
+    color: white;
+}
+
+/* COMPONENTS CONTAINER */
+
+.components-container{
+    flex: 1;
+    padding: 1rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.components-container {
+    text-align: center;
+}
 
