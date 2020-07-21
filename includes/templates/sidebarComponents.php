@@ -16,10 +16,5 @@
         <button type="submit" class="btn btn-primary btn-block">Agregar Componente</button>
     </form>
     <h3><a href="index.php">--- TUS PC's ---</a></h3>
-    <ul>
-        <li>
-            <a href="index.php?pc_id:1">PC MASTER 01</a>
-            <i class="far fa-trash-alt"></i>
-        </li>
-    </ul>
+    <?php include "./includes/layouts/computers_list.php"?>
 </div>
