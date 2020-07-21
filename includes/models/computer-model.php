@@ -1,7 +1,6 @@
 <?php
     $action = $_POST["action"];
 
-
     //Insert in DB
     if($action === "create"){
         //Import connection
@@ -24,6 +23,29 @@
         } catch (Exception $error) {
             $result = array(
                 'error' => $error->getMessage(),
+            );
+        }
+    }
+
+
+    // DELETE in DB
+    if($action === "delete"){
+        //Import DB connection
+        include '../functions/db_connection.php';
+        $pc_id = $_POST["pc_id"];
+        try {
+            //Delete Query
+            $stmt = $conn->prepare("DELETE FROM pc WHERE pc_id = $pc_id");
+            $stmt->execute();
+            if($stmt->affected_rows>0){
+                $result = array(
+                    'answer' => "success",
+                    'action' => $action,
+                );
+            }
+        } catch (Exception $e) {
+            $result = array(
+                "error" => $e->getMessage(),
             );
         }
     }
