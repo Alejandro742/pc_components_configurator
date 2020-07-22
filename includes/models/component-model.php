@@ -33,6 +33,31 @@
         }
     }
 
+    if($action === "delete"){
+        //import the connection
+        include "../functions/db_connection.php";
+        //Getting the data from the POST method
+        $component_id = filter_var($_POST["component_id"],FILTER_SANITIZE_NUMBER_INT);
+        try {
+            $stmt = $conn->prepare("DELETE FROM components WHERE component_id = $component_id");
+            $stmt->execute();
+            if($stmt->affected_rows>0){
+                $result = array(
+                    "answer" => "success",
+                    "action" => $action
+                );
+            }
+            $stmt->close();
+            $conn->close();
+        } catch (Exception $error) {
+            $result = array(
+                'error' => $error->getMessage(),
+            );
+        }
+
+
+    }
+
     echo json_encode($result);
 
 ?>
