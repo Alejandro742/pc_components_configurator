@@ -44,6 +44,7 @@ button:focus {
     margin-top: 1rem;
 }
 
+
 .btn{
     padding: 8px;
     color: white;
@@ -61,6 +62,21 @@ button:focus {
     background-color: var(--primaraColorHover);
     transition: .4s ease-in-out;
     cursor: pointer;
+}
+
+.msg-pc{
+    text-align: center;
+    flex: 1;
+    align-self: center;
+}
+@media screen and (min-width: 768px) {
+    .msg-pc{
+        flex: 1;
+    }
+}
+
+.msg-componente{
+    grid-column: 1/4;
 }
 
 
@@ -170,7 +186,9 @@ button:focus {
 .components-container {
     text-align: center;
 }
-
+.components-container h2{
+    text-transform: uppercase;
+}
 
 /* LIST OF COMPONENTS */
 .components-list{
@@ -216,6 +234,9 @@ button:focus {
         left: 88%;
         font-size: 1.2rem;
     }
+}
+.item-component h4{
+    text-transform: uppercase;
 }
 
 .components-list .item-component p{
