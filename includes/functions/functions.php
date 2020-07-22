@@ -8,10 +8,23 @@
             return false;
         }
     };
+    function getIdComputerIdInURL(){
+        $url = key($_GET);
+        return substr($url,6);
+    };
     function getComputers(){
         include "db_connection.php";
         try {
             return $conn->query("SELECT * FROM pc");
+        } catch (Exception $e) {
+            echo 'ERROR!: '. $e->getMessage();
+            return false;
+        }
+    };
+    function getComponents($pc_id){
+        include "db_connection.php";
+        try {
+            return $conn->query("SELECT * FROM components WHERE pc_id = $pc_id");
         } catch (Exception $e) {
             echo 'ERROR!: '. $e->getMessage();
             return false;
