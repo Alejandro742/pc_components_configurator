@@ -5,8 +5,8 @@
     if($action === "create"){
         //Import connection
         include "../functions/db_connection.php";
-        $pc_name = $_POST["pc_name"];
-        $pc_desc = $_POST["pc_desc"];
+        $pc_name = filter_var($_POST["pc_name"],FILTER_SANITIZE_STRING);
+        $pc_desc = filter_var($_POST["pc_desc"],FILTER_SANITIZE_STRING);
         try {
             //Insert in DB using prepare statements
             $stmt = $conn->prepare("INSERT INTO pc (pc_name,pc_desc) VALUES(?,?)");
@@ -20,6 +20,8 @@
                     'pc_name' => $pc_name
                 );
             }
+            $stmt->close();
+            $conn->close();
         } catch (Exception $error) {
             $result = array(
                 'error' => $error->getMessage(),
@@ -43,6 +45,8 @@
                     'action' => $action,
                 );
             }
+            $stmt->close();
+            $conn->close();
         } catch (Exception $e) {
             $result = array(
                 "error" => $e->getMessage(),
