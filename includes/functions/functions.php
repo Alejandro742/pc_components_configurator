@@ -16,10 +16,10 @@
 
 
     // DATABASE QUERY's
-    function getComputers(){
+    function getComputers($id){
         include "db_connection.php";
         try {
-            return $conn->query("SELECT * FROM pc");
+            return $conn->query("SELECT * FROM pc WHERE user_id = $id");
         } catch (Exception $e) {
             echo 'ERROR!: '. $e->getMessage();
             return false;
