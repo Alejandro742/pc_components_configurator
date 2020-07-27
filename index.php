@@ -37,7 +37,7 @@
                                 <div class="item-component" id="<?php echo $component["component_id"]; ?>">
                                     <h4><?php echo ($component["component_name"]);?></h4>
                                     <p><?php echo $component["component_desc"];?></p>
-                                    <p class="price"><?php echo $component["component_price"];?></p>
+                                    <p class="price">$<?php echo $component["component_price"];?></p>
                                     <i class='far fa-trash-alt'></i>
                                 </div>
                     <?php

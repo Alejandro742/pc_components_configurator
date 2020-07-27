@@ -86,6 +86,7 @@ function addComponentFunction(e) {
             title: "Correcto",
             text: "Componente Agregado!",
           });
+          document.getElementById("components_form").reset();
         }
       }
     };
