@@ -1,4 +1,4 @@
 <div class="navbar">
     <h1>PC MASTER</h1>
-    <a href="#">Log Out</a>
+    <a href="login.php?logout=true">Log Out</a>
 </div>
