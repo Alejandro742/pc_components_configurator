@@ -1,5 +1,8 @@
 <?php
 include 'includes/templates/header.php';
+  session_start();
+  if(isset($_GET["logout"]))
+    $_SESSION = array();
 ?>
 
 <div class="center-form">
