@@ -10,6 +10,7 @@ function addPcFunction(e) {
   e.preventDefault();
   const pc_name = document.getElementById("pc_name").value;
   const pc_desc = document.getElementById("pc_desc").value;
+  const user_id = document.getElementById("user_id").value;
   if (pc_name === "" || pc_desc === "") {
     //Error Handler
     Swal.fire({
@@ -19,7 +20,7 @@ function addPcFunction(e) {
     });
   } else {
     //Adding pc to DB
-    savePC_DB({ pc_name, pc_desc });
+    savePC_DB({ pc_name, pc_desc , user_id});
   }
   //Clear Form
   document.querySelector("#form_pc").reset();
@@ -32,6 +33,7 @@ function savePC_DB(pc_data) {
   const dataForm = new FormData();
   dataForm.append("pc_name", pc_data.pc_name);
   dataForm.append("pc_desc", pc_data.pc_desc);
+  dataForm.append("user_id",pc_data.user_id);
   dataForm.append("action", "create");
 
   //Open the connection
