@@ -40,6 +40,10 @@
     if($user_email){
       if(password_verify($password,$user_password)){
         //sessions code
+        session_start();
+        $_SESSION["user"] = $user_email;
+        $_SESSION["user_id"] = $user_id;
+        $_SESSION["login"] = true;
         $result = array(
           "answer" => "success",
           "action" => $action,
