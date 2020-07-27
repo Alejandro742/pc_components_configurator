@@ -1,6 +1,6 @@
 <ul id="computers-list">
         <?php
-        $computers = getComputers();
+        $computers = getComputers($_SESSION["user_id"]);
         if (!$computers) {
         ?>
             <li>
