@@ -26,3 +26,4 @@ ALTER TABLE pc ADD COLUMN user_id INTEGER UNSIGNED NOT NULL;
 ALTER TABLE pc ADD CONSTRAINT fk_user
 FOREIGN KEY(user_id)
 REFERENCES users(user_id);
+ALTER TABLE users drop username;
