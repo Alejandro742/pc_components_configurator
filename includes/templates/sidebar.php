@@ -9,6 +9,7 @@
             <label for="pc_desc">Descripción</label>
             <textarea name="pc_desc" id="pc_desc"></textarea>
         </div>
+        <input type="hidden" id ="user_id" value="<?php echo $_SESSION["user_id"] ?>">
         <input type="submit" class="btn btn-primary btn-block" value="Agregar PC">
     </form>
     <?php include "./includes/layouts/computers_list.php"?>
