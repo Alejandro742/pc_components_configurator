@@ -1,5 +1,6 @@
 <?php
     $action = $_POST["action"];
+    $user_id = filter_var($_POST["user_id"],FILTER_SANITIZE_NUMBER_INT);
 
     //Insert in DB
     if($action === "create"){
@@ -9,8 +10,8 @@
         $pc_desc = filter_var($_POST["pc_desc"],FILTER_SANITIZE_STRING);
         try {
             //Insert in DB using prepare statements
-            $stmt = $conn->prepare("INSERT INTO pc (pc_name,pc_desc) VALUES(?,?)");
-            $stmt->bind_param("ss",$pc_name,$pc_desc);
+            $stmt = $conn->prepare("INSERT INTO pc (pc_name,pc_desc,user_id) VALUES(?,?,?)");
+            $stmt->bind_param("ssi",$pc_name,$pc_desc,$user_id);
             $stmt->execute();
             if($stmt->affected_rows > 0){
                 $result = array(
